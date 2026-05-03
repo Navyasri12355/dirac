@@ -67,10 +67,10 @@
 ## Phase 2 — Dataset Curation & Fine-Tuning (Week 2)
 
 ### Milestone 2.1 — Data cleaning & chunking `(Day 8–10)` `M1`
-- [ ] Deduplicate papers by abstract similarity (cosine > 0.95 threshold)
-- [ ] Chunk each paper body into 512-token segments with 64-token overlap using `RecursiveCharacterTextSplitter`
-- [ ] Assign chunk IDs: `{paper_id}_chunk_{n}`
-- [ ] Output: `chunked_corpus.jsonl` — ready for embedding and fine-tuning
+- [x] Deduplicate papers by abstract similarity (cosine > 0.95 threshold)
+- [x] Chunk each paper body into 512-token segments with 64-token overlap using `RecursiveCharacterTextSplitter`
+- [x] Assign chunk IDs: `{paper_id}_chunk_{n}`
+- [x] Output: `chunked_corpus.jsonl` — ready for embedding and fine-tuning
 
 ### Milestone 2.2 — QA pair generation `(Day 8–11)` `M1`
 - [ ] For each abstract, generate 3–4 structured QA pairs using Claude or GPT-4 API
