@@ -37,17 +37,17 @@
 
 ### Milestone 1.2 — arXiv scraper `(Day 2–4)` `M1`
 - [x] Build scraper using the `arxiv` Python package — query by category and date range
-- [ ] Collect metadata: paper ID, title, abstract, authors, PDF URL
-- [ ] Download PDFs for top 500 papers (filter by citation count or recency)
-- [ ] Store raw downloads in `/data/raw/`
+- [x] Collect metadata: paper ID, title, abstract, authors, PDF URL
+- [x] Download PDFs for top 500 papers (filter by citation count or recency)
+- [x] Store raw downloads in `/data/raw/`
 
 > **Checkpoint:** 500+ paper metadata records collected and stored as `raw_papers.jsonl`
 
 ### Milestone 1.3 — PDF text extraction `(Day 3–5)` `M1`
-- [ ] Extract full text using `PyMuPDF (fitz)` — page by page
-- [ ] Fallback to abstract-only for papers with garbled LaTeX extraction
-- [ ] Strip references section, figure captions, and math-heavy blocks
-- [ ] Output: `extracted_papers.jsonl` — one record per paper with clean text
+- [x] Extract full text using `PyMuPDF (fitz)` — page by page
+- [x] Fallback to abstract-only for papers with garbled LaTeX extraction
+- [x] Strip references section, figure captions, and math-heavy blocks
+- [x] Output: `extracted_papers.jsonl` — one record per paper with clean text
 
 ### Milestone 1.4 — Baseline environment validation `(Day 3–5)` `M2 + M3`
 - [ ] **M2:** Load `meta-llama/Llama-3.2-3B-Instruct` in 4-bit on Colab T4 — confirm it fits in memory
