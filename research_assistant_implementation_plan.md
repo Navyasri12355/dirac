@@ -29,14 +29,14 @@
 ## Phase 1 — Setup & Data Collection (Week 1)
 
 ### Milestone 1.1 — Project scaffolding `(Day 1–2)` `All members`
-- [ ] Create shared GitHub repo with agreed folder structure (`/data`, `/model`, `/app`, `/eval`, `/notebooks`)
-- [ ] Set up shared Google Drive folder for dataset storage and model checkpoints
-- [ ] Each member sets up Colab environment: install `transformers`, `peft`, `trl`, `faiss-cpu`, `arxiv`, `PyMuPDF`, `gradio`, `sentence-transformers`, `evaluate`, `datasets`, `bitsandbytes`
-- [ ] Agree on domain: **CS.LG + CS.AI** (last 2 years), target ~800–1000 papers
-- [ ] Define shared data schema: `{paper_id, title, abstract, body_text, url, year, category}`
+- [x] Create shared GitHub repo with agreed folder structure (`/data`, `/model`, `/app`, `/eval`, `/notebooks`)
+- [x] Set up shared Google Drive folder for dataset storage and model checkpoints
+- [x] Each member sets up Colab environment: install `transformers`, `peft`, `trl`, `faiss-cpu`, `arxiv`, `PyMuPDF`, `gradio`, `sentence-transformers`, `evaluate`, `datasets`, `bitsandbytes`
+- [x] Agree on domain: **CS.LG + CS.AI** (last 2 years), target ~800–1000 papers
+- [x] Define shared data schema: `{paper_id, title, abstract, body_text, url, year, category}`
 
 ### Milestone 1.2 — arXiv scraper `(Day 2–4)` `M1`
-- [ ] Build scraper using the `arxiv` Python package — query by category and date range
+- [x] Build scraper using the `arxiv` Python package — query by category and date range
 - [ ] Collect metadata: paper ID, title, abstract, authors, PDF URL
 - [ ] Download PDFs for top 500 papers (filter by citation count or recency)
 - [ ] Store raw downloads in `/data/raw/`
