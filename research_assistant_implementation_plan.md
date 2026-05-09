@@ -50,10 +50,10 @@
 - [x] Output: `extracted_papers.jsonl` — one record per paper with clean text
 
 ### Milestone 1.4 — Baseline environment validation `(Day 3–5)` `M2 + M3`
-- [ ] **M2:** Load `meta-llama/Llama-3.2-3B-Instruct` in 4-bit on Colab T4 — confirm it fits in memory
-- [ ] **M2:** Run a simple inference pass to verify the base model responds correctly
-- [ ] **M3:** Build a minimal Gradio stub (text input → hardcoded output) as UI skeleton
-- [ ] **M3:** Set up ROUGE-L evaluation harness using the `evaluate` library on 5 sample outputs
+- [x] **M2:** Load `meta-llama/Llama-3.2-3B-Instruct` in 4-bit on Colab T4 — confirm it fits in memory
+- [x] **M2:** Run a simple inference pass to verify the base model responds correctly
+- [x] **M3:** Build a minimal Gradio stub (text input → hardcoded output) as UI skeleton
+- [x] **M3:** Set up ROUGE-L evaluation harness using the `evaluate` library on 5 sample outputs
 
 > **Checkpoint:** Base model loads and infers. Gradio stub is live. Eval harness returns ROUGE scores.
 
