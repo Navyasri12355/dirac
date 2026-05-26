@@ -145,16 +145,6 @@ python app/app.py
 
 ---
 
-## 👥 Team Roles & Responsibilities
-
-| Member | Role | Phase | Responsibility |
-|---|---|---|---|
-| **M1** | Data Engineer | 1–2, 4 | arXiv scraping, PDF extraction, QA generation, documentation |
-| **M2** | Model Engineer | 2–3, 4 | LoRA fine-tuning, FAISS indexing, RAG pipeline |
-| **M3** | App & Eval | 1–4 | Gradio UI, ROUGE evaluation, human preference scoring, report |
-
----
-
 ## 📊 Evaluation Targets
 
 | Metric | Base Model | Fine-tuned + RAG | Status |
@@ -168,7 +158,7 @@ python app/app.py
 
 ## 🎯 Key Deliverables
 
-- [ ] **Dataset:** `Navyasri12355/arxiv-qa-dataset` on HuggingFace Hub ✓ (In HF Hub)
+- [x] **Dataset:** `Navyasri12355/arxiv-qa-dataset` on HuggingFace Hub ✓ (In HF Hub)
 - [ ] **Model:** `Navyasri12355/llama-3.2-3b-arxiv-lora` (LoRA adapter + model card) — In progress
 - [ ] **App:** Live Gradio demo on HuggingFace Spaces — Pending Phase 3
 - [ ] **Evaluation:** `eval/results_*.json` + human preference sheet — Pending Phase 2
@@ -193,16 +183,6 @@ python app/app.py
   ```
 - **Generation method:** Groq API (`llama-3.1-8b-instant`)
 - **Question types:** Problem statement, contributions, methodology, limitations
-
----
-
-## 🚀 Next Steps
-
-1. **M2:** Start LoRA fine-tuning with checkpointing to Google Drive (Day 9)
-2. **M2:** Build FAISS index over embedded chunks (Day 10)
-3. **M3:** Compute baseline ROUGE scores on held-out eval set (Day 10)
-4. **M2+M3:** Integrate RAG pipeline with Gradio UI (Day 16)
-5. **All:** Phase 3 team sync to review results and finalize feature scope
 
 ---
 
