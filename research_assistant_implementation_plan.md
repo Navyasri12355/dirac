@@ -73,11 +73,11 @@
 - [x] Output: `chunked_corpus.jsonl` — ready for embedding and fine-tuning
 
 ### Milestone 2.2 — QA pair generation `(Day 8–11)` `M1`
-- [ ] For each abstract, generate 3–4 structured QA pairs using Claude or GPT-4 API
-- [ ] Question types: problem statement, main contribution, methodology, limitations
-- [ ] Target: **10,000–15,000 QA pairs** total
-- [ ] Format as instruction-tuning pairs: `{"instruction": "...", "input": "...", "output": "..."}`
-- [ ] Push final dataset to HuggingFace Hub: `team-name/arxiv-ml-qa`
+- [x] For each abstract, generate 3–4 structured QA pairs using Groq API (llama-3.1-8b-instant model)
+- [x] Question types: problem statement, main contribution, methodology, limitations
+- [x] Target: **10,000–15,000 QA pairs** total
+- [x] Format as instruction-tuning pairs: `{"instruction": "...", "input": "...", "output": "..."}`
+- [x] Push final dataset to HuggingFace Hub: `Navyasri12355/arxiv-qa-dataset`
 
 > **Checkpoint:** Dataset published on HuggingFace Hub. QA pairs reviewed and sampled for quality.
 
