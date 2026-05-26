@@ -75,7 +75,7 @@
 ### Milestone 2.2 — QA pair generation `(Day 8–11)` `M1`
 - [ ] For each abstract, generate 3–4 structured QA pairs using Claude or GPT-4 API
 - [ ] Question types: problem statement, main contribution, methodology, limitations
-- [ ] Target: **2,000–3,000 QA pairs** total
+- [ ] Target: **10,000–15,000 QA pairs** total
 - [ ] Format as instruction-tuning pairs: `{"instruction": "...", "input": "...", "output": "..."}`
 - [ ] Push final dataset to HuggingFace Hub: `team-name/arxiv-ml-qa`
 
