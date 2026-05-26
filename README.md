@@ -78,7 +78,7 @@ Build a **RAG-powered research assistant** using a LoRA fine-tuned LLaMA-3.2-3B 
 dirac/
 ├── README.md                                    # This file
 ├── requirements.txt                             # Python dependencies
-├── research_assistant_implementation_plan.md   # Full roadmap
+├── research_assistant_implementation_plan.md   # Full project roadmap
 ├── schema.py                                    # Data schema definitions
 │
 ├── app/
@@ -94,20 +94,18 @@ dirac/
 │       └── qa_progress.jsonl                   # ✓ Generated QA pairs
 │
 ├── eval/
-│   ├── eval_harness.py                         # ROUGE-L evaluation
-│   └── sample_qas.json                         # Sample test questions
+│   ├── eval_harness.py                         # ROUGE-L evaluation harness
+│   └── sample_qas.json                         # Sample evaluation questions
 │
 ├── model/
 │   ├── checkpoints/                            # Fine-tuning checkpoints (to be populated)
-│   └── configs/                                # LoRA + training configs
+│   └── configs/                                # LoRA config files
 │
-├── notebooks/
-│   ├── 01_scraper.ipynb                       # arXiv scraper
-│   ├── 02_extractor.ipynb                     # PDF text extraction
-│   ├── 03_data_cleaning.ipynb                 # Deduplication & chunking
-│   └── 04_qa_generation.ipynb                 # QA pair generation
-│
-└── scripts/                                     # Utility scripts (to be added)
+└── notebooks/
+    ├── 01_scraper.ipynb                       # arXiv scraper & metadata collection
+    ├── 02_extractor.ipynb                     # PDF text extraction pipeline
+    ├── 03_data_cleaning.ipynb                 # Deduplication & chunking
+    └── 04_qa_generation.ipynb                 # QA pair generation via Groq API
 ```
 
 ---
@@ -203,10 +201,12 @@ python app/app.py
 
 ## 📖 Documentation
 
+All data collection and processing logic is implemented in **Jupyter notebooks** for reproducibility and ease of experimentation:
+
+- **Notebooks:** See [notebooks/](notebooks/) — step-by-step implementations for scraping, extraction, cleaning, and QA generation
 - **Full Implementation Plan:** See [research_assistant_implementation_plan.md](research_assistant_implementation_plan.md)
-- **Data Schema:** See [schema.py](schema.py)
-- **Notebooks:** See [notebooks/](notebooks/) for step-by-step walkthroughs
-- **Evaluation Harness:** See [eval/eval_harness.py](eval/eval_harness.py)
+- **Data Schema:** See [schema.py](schema.py) — data structure definitions
+- **Evaluation Harness:** See [eval/eval_harness.py](eval/eval_harness.py) — ROUGE-L scoring
 
 ---
 
