@@ -82,8 +82,8 @@
 > **Checkpoint:** Dataset published on HuggingFace Hub. QA pairs reviewed and sampled for quality.
 
 ### Milestone 2.3 — LoRA fine-tuning `(Day 9–12)` `M2`
-- [ ] Configure LoRA: `r=16`, `lora_alpha=32`, `target_modules=["q_proj","v_proj"]`, `dropout=0.05`
-- [ ] Load dataset from HuggingFace Hub and apply chat template formatting
+- [x] Configure LoRA: `r=16`, `lora_alpha=32`, `target_modules=["q_proj","v_proj"]`, `dropout=0.05`
+- [x] Load dataset from HuggingFace Hub and apply chat template formatting
 - [ ] Run `SFTTrainer` for 2–3 epochs; use `save_steps=50` to checkpoint to Drive
 - [ ] Monitor training loss — target final loss < 1.5
 - [ ] Save final adapter weights: `llama-3.2-3b-arxiv-lora/`
