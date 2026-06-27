@@ -116,10 +116,10 @@
 ## Phase 3 — RAG Integration & Evaluation (Week 3)
 
 ### Milestone 3.1 — RAG retrieval pipeline `(Day 15–17)` `M2`
-- [ ] Build retrieval function: embed query → FAISS top-k search → return chunk texts + paper IDs
-- [ ] Construct RAG prompt template: `[CONTEXT: {chunks}]\n\nQuestion: {query}\nAnswer:`
-- [ ] Test retrieval quality on 10 sample research questions
-- [ ] Tune `k` (try k=3 and k=5) — pick based on context window fit and output quality
+- [x] Build retrieval function: embed query → FAISS top-k search → return chunk texts + paper IDs
+- [x] Construct RAG prompt template: `[CONTEXT: {chunks}]\n\nQuestion: {query}\nAnswer:`
+- [x] Test retrieval quality on 10 sample research questions
+- [x] Tune `k` (try k=3 and k=5) — pick based on context window fit and output quality
 
 ### Milestone 3.2 — End-to-end pipeline integration `(Day 16–18)` `M2 + M3`
 - [ ] **M2:** Expose inference function: `generate(query, mode) → response` supporting three modes
