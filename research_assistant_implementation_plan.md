@@ -92,17 +92,17 @@
 > **Checkpoint:** Fine-tuned adapter saved and accessible. Training loss curve logged.
 
 ### Milestone 2.4 — FAISS index construction `(Day 10–12)` `M2`
-- [ ] Embed all chunks using `sentence-transformers` (`all-MiniLM-L6-v2`)
-- [ ] Build FAISS `IndexFlatL2` over all chunk embeddings
-- [ ] Save index to Drive: `faiss_index.bin` + `chunk_metadata.jsonl`
-- [ ] Test: query index with a sample question, confirm top-3 retrieved chunks are relevant
+- [x] Embed all chunks using `sentence-transformers` (`all-MiniLM-L6-v2`)
+- [x] Build FAISS `IndexFlatL2` over all chunk embeddings
+- [x] Save index to Drive: `faiss_index.bin` + `chunk_metadata.jsonl`
+- [x] Test: query index with a sample question, confirm top-3 retrieved chunks are relevant
 
 ### Milestone 2.5 — Baseline ROUGE evaluation `(Day 10–13)` `M3`
-- [ ] Hold out 50 papers not seen during training as evaluation set
-- [ ] Generate summaries from **base model** (no fine-tuning, no RAG) for all 50 papers
-- [ ] Compute ROUGE-L scores against reference abstracts
-- [ ] Log baseline scores to `eval/results_base.json`
-- [ ] Begin Gradio UI development — wire text input to base model inference
+- [x] Hold out 50 papers not seen during training as evaluation set
+- [x] Generate summaries from **base model** (no fine-tuning, no RAG) for all 50 papers
+- [x] Compute ROUGE-L scores against reference abstracts
+- [x] Log baseline scores to `eval/results_base.json`
+- [x] Begin Gradio UI development — wire text input to base model inference
 
 > **Checkpoint:** Baseline ROUGE-L score recorded. Gradio UI calls base model live.
 
