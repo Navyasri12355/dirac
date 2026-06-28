@@ -8,7 +8,7 @@ A production-ready research assistant that combines a LoRA fine-tuned **LLaMA-3.
 
 ## What It Does
 
-DIRAC lets you interact with a knowledge base of 4000 arXiv papers (CS.LG + CS.AI, 2023–2025) through three core capabilities:
+DIRAC lets you interact with a knowledge base of 4000 arXiv papers (CS.LG, CS.CV, CS.CL and CS.AI, 2022–2026) through three core capabilities:
 
 - **Question Answering** — Ask domain-specific questions; the model retrieves the most relevant paper chunks and generates a grounded, cited response
 - **Paper Summarization** — Provide an arXiv ID or abstract and get a structured summary: contributions, methodology, and limitations
@@ -50,7 +50,7 @@ The pipeline retrieves top-K relevant 512-token chunks from the FAISS index, inj
 | **LoRA targets** | `q_proj`, `v_proj`, `k_proj`, `o_proj` |
 | **Embeddings** | `sentence-transformers/all-MiniLM-L6-v2` |
 | **Vector Store** | FAISS (L2 index) |
-| **Corpus** | 512+ arXiv papers, CS.LG, CS.CV, CS. CL and CS.AI, 2022–2026 |
+| **Corpus** | 512+ arXiv papers, CS.LG, CS.CV, CS.CL and CS.AI, 2022–2026 |
 | **Chunks** | 68,930 segments @ 512 tokens |
 | **QA Pairs** | 12,853 instruction-tuning pairs (generated via Groq API) |
 | **Evaluation Set** | 50 held-out papers (`eval/holdout_50.jsonl`) |
