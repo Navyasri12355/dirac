@@ -1,4 +1,4 @@
-# DIRAC — Domain-Specific Research Assistant for arXiv ML Papers
+# DIRAC — Domain-specific Intelligent Research Assistant with Context
 
 **Fine-Tuned LLM + RAG Pipeline for Academic Research**
 
@@ -8,7 +8,7 @@ A production-ready research assistant that combines a LoRA fine-tuned **LLaMA-3.
 
 ## What It Does
 
-DIRAC lets you interact with a knowledge base of 500+ arXiv papers (CS.LG + CS.AI, 2023–2025) through three core capabilities:
+DIRAC lets you interact with a knowledge base of 4000 arXiv papers (CS.LG + CS.AI, 2023–2025) through three core capabilities:
 
 - **Question Answering** — Ask domain-specific questions; the model retrieves the most relevant paper chunks and generates a grounded, cited response
 - **Paper Summarization** — Provide an arXiv ID or abstract and get a structured summary: contributions, methodology, and limitations
@@ -50,9 +50,9 @@ The pipeline retrieves top-K relevant 512-token chunks from the FAISS index, inj
 | **LoRA targets** | `q_proj`, `v_proj`, `k_proj`, `o_proj` |
 | **Embeddings** | `sentence-transformers/all-MiniLM-L6-v2` |
 | **Vector Store** | FAISS (L2 index) |
-| **Corpus** | 512+ arXiv papers, CS.LG + CS.AI, 2023–2025 |
+| **Corpus** | 512+ arXiv papers, CS.LG, CS.CV, CS. CL and CS.AI, 2022–2026 |
 | **Chunks** | 68,930 segments @ 512 tokens |
-| **QA Pairs** | 12,847 instruction-tuning pairs (generated via Groq API) |
+| **QA Pairs** | 12,853 instruction-tuning pairs (generated via Groq API) |
 | **Evaluation Set** | 50 held-out papers (`eval/holdout_50.jsonl`) |
 
 **Dataset on HuggingFace Hub:** [`Navyasri12355/arxiv-qa-dataset`](https://huggingface.co/datasets/Navyasri12355/arxiv-qa-dataset)
@@ -85,7 +85,7 @@ dirac/
 │   └── processed/
 │       ├── extracted_papers.jsonl    # Full-text extracted from PDFs
 │       ├── chunked_corpus.jsonl      # Deduplicated 512-token chunks
-│       └── qa_pairs.jsonl            # 12,847 instruction-tuning QA pairs
+│       └── qa_pairs.jsonl            # 12,853 instruction-tuning QA pairs
 │
 ├── eval/
 │   ├── eval_harness.py     # ROUGE-L evaluation harness
