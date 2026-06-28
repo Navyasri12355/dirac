@@ -81,7 +81,7 @@ dirac/
 │
 ├── data/
 │   ├── raw/
-│   │   └── raw_papers.jsonl          # 512+ papers (metadata + abstracts)
+│   │   └── raw_papers.jsonl          # 4000 papers (metadata + abstracts)
 │   └── processed/
 │       ├── extracted_papers.jsonl    # Full-text extracted from PDFs
 │       ├── chunked_corpus.jsonl      # Deduplicated 512-token chunks
