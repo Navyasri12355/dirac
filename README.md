@@ -43,17 +43,17 @@ The pipeline retrieves top-K relevant 512-token chunks from the FAISS index, inj
 
 ## Model & Data
 
-| Component | Detail |
-|---|---|
-| **Base Model** | `meta-llama/Llama-3.2-3B-Instruct` (4-bit, bitsandbytes) |
-| **Fine-tuning** | LoRA (`r=16`, `α=32`) via `peft` + `trl` SFTTrainer |
-| **LoRA targets** | `q_proj`, `v_proj`, `k_proj`, `o_proj` |
-| **Embeddings** | `sentence-transformers/all-MiniLM-L6-v2` |
-| **Vector Store** | FAISS (L2 index) |
-| **Corpus** | 512+ arXiv papers, CS.LG, CS.CV, CS.CL and CS.AI, 2022–2026 |
-| **Chunks** | 68,930 segments @ 512 tokens |
-| **QA Pairs** | 12,853 instruction-tuning pairs (generated via Groq API) |
-| **Evaluation Set** | 50 held-out papers (`eval/holdout_50.jsonl`) |
+| Component          | Detail                                                      |
+| ------------------ | ----------------------------------------------------------- |
+| **Base Model**     | `meta-llama/Llama-3.2-3B-Instruct` (4-bit, bitsandbytes)    |
+| **Fine-tuning**    | LoRA (`r=16`, `α=32`) via `peft` + `trl` SFTTrainer         |
+| **LoRA targets**   | `q_proj`, `v_proj`, `k_proj`, `o_proj`                      |
+| **Embeddings**     | `sentence-transformers/all-MiniLM-L6-v2`                    |
+| **Vector Store**   | FAISS (L2 index)                                            |
+| **Corpus**         | 512+ arXiv papers, CS.LG, CS.CV, CS.CL and CS.AI, 2022–2026 |
+| **Chunks**         | 68,930 segments @ 512 tokens                                |
+| **QA Pairs**       | 12,853 instruction-tuning pairs (generated via Groq API)    |
+| **Evaluation Set** | 50 held-out papers (`eval/holdout_50.jsonl`)                |
 
 **Dataset on HuggingFace Hub:** [`Navyasri12355/arxiv-qa-dataset`](https://huggingface.co/datasets/Navyasri12355/arxiv-qa-dataset)
 
@@ -61,11 +61,11 @@ The pipeline retrieves top-K relevant 512-token chunks from the FAISS index, inj
 
 ## Evaluation Results
 
-| Metric | Base LLaMA-3.2-3B | Fine-tuned + RAG |
-|---|---|---|
-| ROUGE-L (summarization) | 0.19–0.22 | **0.33–0.44** |
-| Perplexity (domain corpus) | ~40 | **< 25** |
-| Human preference (1–5 scale) | 2.5 | **> 3.5** |
+| Metric                       | Base LLaMA-3.2-3B | Fine-tuned + RAG |
+| ---------------------------- | ----------------- | ---------------- |
+| ROUGE-L (summarization)      | 0.19–0.22         | **0.33–0.44**    |
+| Perplexity (domain corpus)   | ~40               | **< 25**         |
+| Human preference (1–5 scale) | 2.5               | **> 3.5**        |
 
 Evaluation was run on a held-out set of 50 papers (`eval/holdout_50.jsonl`) with ROUGE-L scoring via the `evaluate` library. Baseline outputs are logged in `eval/results_base.json`.
 
@@ -76,7 +76,7 @@ Evaluation was run on a held-out set of 50 papers (`eval/holdout_50.jsonl`) with
 ```
 dirac/
 ├── app/
-│   ├── app.py              # Gradio UI — main application entry point
+│   ├── server.py              # FastAPI server
 │   └── rag_pipeline.py     # RAGPipeline class: FAISS retrieval + prompt building
 │
 ├── data/
@@ -112,6 +112,7 @@ dirac/
 ## Setup & Installation
 
 ### Prerequisites
+
 - Python 3.10+
 - CUDA 11.8+ (for local GPU) or Google Colab Pro T4
 - 15+ GB storage (for model checkpoints and FAISS index)
@@ -131,7 +132,7 @@ pip install -r requirements.txt
 ### Run the App
 
 ```bash
-python app/app.py
+python app/server.py
 # Available at http://localhost:7860
 ```
 
@@ -156,18 +157,18 @@ prompt, chunks = rag.query("What are the limitations of attention mechanisms?")
 
 ## Tech Stack
 
-| Component | Technology |
-|---|---|
-| Base Model | `meta-llama/Llama-3.2-3B-Instruct` |
-| Fine-tuning | `peft` (LoRA) + `trl` (SFTTrainer) |
-| Embeddings | `sentence-transformers` (all-MiniLM-L6-v2) |
-| Vector Search | `faiss-cpu` |
-| Evaluation | `evaluate` (ROUGE-L) |
-| UI | `gradio` |
-| Quantization | `bitsandbytes` (4-bit) |
-| Data Collection | `arxiv` + `PyMuPDF` |
-| QA Generation | Groq API (`llama-3.1-8b-instant`) |
-| Compute | Google Colab Pro (T4 GPU) |
+| Component       | Technology                                 |
+| --------------- | ------------------------------------------ |
+| Base Model      | `meta-llama/Llama-3.2-3B-Instruct`         |
+| Fine-tuning     | `peft` (LoRA) + `trl` (SFTTrainer)         |
+| Embeddings      | `sentence-transformers` (all-MiniLM-L6-v2) |
+| Vector Search   | `faiss-cpu`                                |
+| Evaluation      | `evaluate` (ROUGE-L)                       |
+| UI              | `gradio`                                   |
+| Quantization    | `bitsandbytes` (4-bit)                     |
+| Data Collection | `arxiv` + `PyMuPDF`                        |
+| QA Generation   | Groq API (`llama-3.1-8b-instant`)          |
+| Compute         | Google Colab Pro (T4 GPU)                  |
 
 ---
 
